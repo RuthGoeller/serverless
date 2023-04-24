@@ -1,11 +1,30 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Game from './pages/Game';
+import GameOver from './pages/GameOver';
+import HighScores from './pages/HighScores';
+import Home from './pages/Home';
+import Navbar from './components/Navbar';
+import { Container } from './components/styled/Container';
 
-import './App.css';
 
 function App() {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <Router>
+ <Navbar>
+  <Container>
+      <Routes>
+        <Route path='/game' element={<Game/>}></Route>
+        <Route path='/highScores' element={<HighScores/>}></Route>
+        <Route path='/gameOver' element={<GameOver/>}></Route>
+        <Route path='/gameOver' element={<GameOver/>}></Route>
+        <Route path='/gameOver' element={<GameOver/>}></Route>
+        <Route path="/" element={<Home />} />
+      </Routes>
+      </Container>
+      </Navbar>
+      
+    </Router>
+    
   );
 }
 
